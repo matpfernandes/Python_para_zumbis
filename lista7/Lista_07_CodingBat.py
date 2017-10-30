@@ -6,19 +6,28 @@
 # retorna uma string com n cópias da string original
 # multstring('Hi', 2) -> 'HiHi'
 def multstring(s, n):
-  return
+  return s*n
 
 # B. string_splosion
 # string_splosion('Code') -> 'CCoCodCode'
 # string_splosion('abc') -> 'aababc'
 # string_splosion('ab') -> 'aab'
 def string_splosion(s):
-  return
+    i = 0
+    nova = ''
+    while i <= len(s):
+        nova += s[:i]
+        i += 1
+    return nova
 
 # C. array_count9
 # conta quantas vezes aparece o 9 numa lista nums
 def array_count9(nums):
-  return 
+    c = 0
+    for n in nums:
+        if n == 9:
+            c += 1
+    return c
 
 # D. array_front9
 # verifica se pelo menos um dos quatro primeiros é nove
@@ -26,7 +35,10 @@ def array_count9(nums):
 # array_front9([1, 2, 3, 4, 9]) -> False
 # array_front9([1, 2, 3, 4, 5]) -> False
 def array_front9(nums):
-  return
+    if 9 in nums[:4]:
+        return True
+    else:
+        return False
 
 # E. hello_name
 # seja uma string name
@@ -34,23 +46,23 @@ def array_front9(nums):
 # hello_name('Alice') -> 'Hello Alice!'
 # hello_name('X') -> 'Hello X!'
 def hello_name(name):
-  return 
+  return ("Hello %s!" %name)
 
 # F. make_tags
 # make_tags('i', 'Yay'), '<i>Yay</i>'
 # make_tags('i', 'Hello'), '<i>Hello</i>'
 # make_tags('cite', 'Yay'), '<cite>Yay</cite>'
 def make_tags(tab, word):
-  return 
+  return("<%s>%s</%s>" %(tab, word, tab))
 
 # G. extra_end
 # seja um string s com no mínimo duas letras
 # retorna três vezes as duas últimas letras
 # extra_end('Hello'), 'lololo'
 # extra_end('ab'), 'ababab'
-# extra_end('Hi'), 'HiHiHi'  
+# extra_end('Hi'), 'HiHiHi'
 def extra_end(s):
-  return 
+  return s[-2:]*3
 
 # H. first_half
 # seja uma string s
@@ -59,7 +71,8 @@ def extra_end(s):
 # first_half('HelloThere') -> 'Hello'
 # first_half('abcdef') -> 'abc'
 def first_half(s):
-  return 
+    t = len(s)//2
+    return(s[:t])
 
 # I. sem_pontas
 # seja uma string s de pelo menos dois caracteres
@@ -68,7 +81,7 @@ def first_half(s):
 # without_end('python') -> 'ytho'
 # without_end('coding') -> 'odin'
 def sem_pontas(s):
-  return 
+  return s[1:-1]
 
 # J. roda2
 # rodar uma string s duas posições
@@ -76,7 +89,7 @@ def sem_pontas(s):
 # left2('Hello') -> 'lloHe'
 # left2('Hi') -> 'Hi'
 def roda2(s):
-  return 
+  return s[2:]+s[:2]
 
 
 # Provided simple test() function used in main() to print
@@ -124,7 +137,7 @@ def main():
   test(array_count9([]), 0)
   test(array_count9([4, 2, 4, 3, 1]), 0)
   test(array_count9([9, 2, 99, 3, 1]), 1)
-  
+
   print ()
   print ('Array front 9')
   test(array_front9([1, 2, 9, 3, 4]), True)
