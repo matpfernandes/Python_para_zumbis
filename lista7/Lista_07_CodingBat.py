@@ -23,11 +23,7 @@ def string_splosion(s):
 # C. array_count9
 # conta quantas vezes aparece o 9 numa lista nums
 def array_count9(nums):
-    c = 0
-    for n in nums:
-        if n == 9:
-            c += 1
-    return c
+    return nums.count(9)
 
 # D. array_front9
 # verifica se pelo menos um dos quatro primeiros é nove
@@ -35,10 +31,8 @@ def array_count9(nums):
 # array_front9([1, 2, 3, 4, 9]) -> False
 # array_front9([1, 2, 3, 4, 5]) -> False
 def array_front9(nums):
-    if 9 in nums[:4]:
-        return True
-    else:
-        return False
+    return 9 in nums[:4]
+
 
 # E. hello_name
 # seja uma string name
@@ -52,8 +46,8 @@ def hello_name(name):
 # make_tags('i', 'Yay'), '<i>Yay</i>'
 # make_tags('i', 'Hello'), '<i>Hello</i>'
 # make_tags('cite', 'Yay'), '<cite>Yay</cite>'
-def make_tags(tab, word):
-  return("<%s>%s</%s>" %(tab, word, tab))
+def make_tags(tag, word):
+  return("<%s>%s</%s>" %(tag, word, tag))
 
 # G. extra_end
 # seja um string s com no mínimo duas letras
@@ -71,8 +65,7 @@ def extra_end(s):
 # first_half('HelloThere') -> 'Hello'
 # first_half('abcdef') -> 'abc'
 def first_half(s):
-    t = len(s)//2
-    return(s[:t])
+    return s[:len(s)//2]
 
 # I. sem_pontas
 # seja uma string s de pelo menos dois caracteres

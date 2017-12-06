@@ -7,10 +7,7 @@
 # você pode ficar dormindo quando é feriado ou não é dia semana
 # retorne True ou False conforme você vá dormir ou não
 def dormir(dia_semana, feriado):
-    if feriado or not dia_semana:
-        return True
-    else:
-        return False
+    return not dia_semana or feriado
 
 
 # B. alunos_problema
@@ -19,10 +16,7 @@ def dormir(dia_semana, feriado):
 # temos problemas quando ambos estão sorrindo ou ambos não estão sorrindo
 # retorne True quando houver problemas
 def alunos_problema(a_sorri, b_sorri):
-    if (a_sorri and b_sorri) or (not a_sorri and not b_sorri):
-        return True
-    else:
-        return False
+    return a_sorri == b_sorri
 
 # C. soma_dobro
 # dados dois números inteiros retorna sua soma
@@ -53,19 +47,13 @@ def diff21(n):
 # temos problemas se o papagaio estiver falando
 # antes da 7 ou depois das 20
 def papagaio(falando, hora):
-    if falando and (hora < 7 or hora > 20):
-        return True
-    else:
-        return False
+    return falando and (hora < 7 or hora > 20)
 
 # F. dez
 # dados dois inteiros a e b
 # retorna True se um dos dois é 10 ou a soma é 10
 def dez(a, b):
-    if a == 10 or b == 10 or a+b == 10:
-        return True
-    else:
-        return False
+    return a == 10 or b == 10 or a+b == 10
 
 # G. dista10
 # seja um inteiro n
@@ -75,16 +63,7 @@ def dez(a, b):
 # dista10(90) -> True
 # dista10(89) -> False
 def dista10(n):
-    if n >= 90 and n <= 100:
-        return True
-    elif n >= 100 and n <= 110:
-        return True
-    elif n >= 190 and n <= 200:
-        return True
-    elif n >=200 and n <= 210:
-        return True
-    else:
-        return False
+    return abs(n - 100) <= 10 or abs(n - 200) <= 10
 
 
 # H. apaga
